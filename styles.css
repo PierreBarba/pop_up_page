@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,17 +8,18 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    background: white;
+    background: #ffffff;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    color: #333;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 form {
@@ -25,17 +28,21 @@ form {
 }
 
 label {
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
     font-weight: bold;
+    color: #555;
 }
 
 input[type="text"],
 input[type="time"],
 textarea {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Asegura que el padding y border no aumenten el tamaño total */
 }
 
 textarea {
@@ -47,27 +54,38 @@ fieldset {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Asegura que el padding y border no aumenten el tamaño total */
 }
 
 legend {
     font-weight: bold;
+    color: #555;
+}
+
+label input[type="radio"] {
+    margin-right: 10px;
 }
 
 .tiempo {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
 
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button[type="submit"] {
@@ -75,7 +93,54 @@ button[type="submit"] {
     color: white;
 }
 
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
 button[type="button"] {
     background-color: #dc3545;
     color: white;
+}
+
+button[type="button"]:hover {
+    background-color: #c82333;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .tiempo {
+        flex-direction: column;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    input[type="text"],
+    input[type="time"],
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    textarea {
+        height: 80px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
