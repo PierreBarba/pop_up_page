@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Hoja de Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editor Hoja de Control</h1>
+        <form>
+            <label for="miembro">Miembro del equipo:</label>
+            <input type="text" id="miembro" name="miembro" placeholder="Miembro del equipo">
+            
+            <fieldset>
+                <legend>Selecciona una opción</legend>
+                <label>
+                    <input type="radio" name="opcion" value="tiempo">
+                    Tiempo de entrada y tiempo de salida
+                </label>
+                <label>
+                    <input type="radio" name="opcion" value="duracion">
+                    Duración
+                </label>
+            </fieldset>
+            
+            <div class="tiempo">
+                <label for="entrada">Tiempo de entrada:</label>
+                <input type="time" id="entrada" name="entrada">
+                
+                <label for="salida">Tiempo de salida:</label>
+                <input type="time" id="salida" name="salida">
+            </div>
+            
+            <label for="costumer">Costumer:</label>
+            <input type="text" id="costumer" name="costumer">
+            
+            <label for="equipo">Equipo:</label>
+            <input type="text" id="equipo" name="equipo">
+            
+            <label for="tipo">Tipo de trabajo:</label>
+            <input type="text" id="tipo" name="tipo">
+            
+            <label for="notas">Notas:</label>
+            <textarea id="notas" name="notas" maxlength="100"></textarea>
+            
+            
+            <div class="buttons">
+                <button type="submit">Guardar</button>
+                <button type="button" onclick="window.history.back()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
